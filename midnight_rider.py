@@ -10,8 +10,11 @@ import midnight_rider_text
 
 class Game:
     """Represent our game engine
-
+    Attribute:
+         Done: describes if the game is finished or not - bool
     """
+    def __int__(self):
+        done = False
 
     def introduction(self):
         """Print the introduction text"""
@@ -24,11 +27,32 @@ class Game:
             sys.stdout.write(char)
             sys.stdout.flush()
 
+    def show_choices(self) -> None:
+        """show the user their choices"""
+        time.sleep(1)
+        print(midnight_rider_text.CHOICES)
+        time.sleep(1)
+
+    def get_choice(self): -> None:
+        """Get's the user's choice and changes the environment"""
+        # Get the user's response
+        user_choice = input().strip(",.?!").lower()
+
+        # Based on their choice, change the attributes of the class
+        if user_choice == "q":
+            self.done = True
+
 
 def main() -> None:
     game = Game()  # starting a new game
     game.introduction()
 
+    # Main Loop:
+    while not game.done:
 
-if __name__ == "__main__":
-    main()
+         #
+         game.show_choices()
+         #
+
+    if __name__ == "__main__":
+        main()
