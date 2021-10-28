@@ -82,15 +82,50 @@ Methods:
 """
 
 
+# class exercise
+
+
 class Vehicle:
-    def __init__(self, name: str, max_speed: int, capacity: int) -> None:
+    """Represents a vehicle
+    Attributes:
+        name: name of the vehicle
+        max_speed: maximum speed in km/h
+        capacity: amount of people it can hold
+    """
+
+    def __init__(self):
+        self.name = ""
+        self.max_speed = 0
+        self.capacity = 0
+
+    def vroom(self) -> None:
+        """Vehicle goes vroom times the amount of speed"""
+
+        print("Vroom" * self.max_speed)
+
 
 class Bus(Vehicle):
+    def fare(self, age: int) -> None:
+        """Tells the amount the fare is for the age inputted"""
+        if 18 <= age <= 60:
+            print("The fare of this bus is $5!")
+        else:
+            print("You ride free!")
 
-    age = int(input("What is your age?"))
-    if age in range(0, 17):
-        print("Price for the bust is free!")
-    if age in range(61, 140):
-        print("The bus price is free!")
-    if age in range(18, 60):
-        print("The bus fee is $5!")
+
+a_vehicle = Vehicle()
+a_vehicle.name = "Tesla model S"
+a_vehicle.max_speed = 165
+a_vehicle.capacity = 4
+a_vehicle.vroom()
+
+a_bus = Bus()
+a_bus.name = "bus"
+a_bus.capacity = 35
+a_bus.max_speed = 125
+a_bus.vroom()
+print()
+a_bus.fare(45)
+a_bus.fare(4)
+a_bus.fare(32)
+a_bus.fare(10)
