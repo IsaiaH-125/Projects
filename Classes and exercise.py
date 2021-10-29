@@ -59,7 +59,7 @@
 # print(some_circle.radius)
 # print(some_circle.num_sides)
 
-""" classes_exercise.py """
+""" classes_exercise """
 
 """
 1. Create a class according to the following requirements:
@@ -80,9 +80,6 @@ Methods:
                 18-60 years - $5
                 61+ years - Free
 """
-
-
-"""class exercise"""
 
 
 class Vehicle:
