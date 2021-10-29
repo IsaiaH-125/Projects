@@ -103,7 +103,7 @@ class Vehicle:
 
 class Bus(Vehicle):
     def fare(self, age: int) -> None:
-        """Prints the fare amount for the age inputted"""
+        """Fare amount printed based on age inputted"""
         if 18 <= age <= 60:
             print("The fare of this bus is $5!")
         else:
