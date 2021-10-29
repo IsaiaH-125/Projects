@@ -82,14 +82,14 @@ Methods:
 """
 
 
-# class exercise
+"""class exercise"""
 
 
 class Vehicle:
     """Represents a vehicle
     Attributes:
         name: name of the vehicle
-        max_speed: maximum speed in km/h
+        max_speed: max speed which is in mph
         capacity: amount of people it can hold
     """
 
@@ -99,33 +99,36 @@ class Vehicle:
         self.capacity = 0
 
     def vroom(self) -> None:
-        """Vehicle goes vroom times the amount of speed"""
+        """Vehicle outputs vroom times the amount of speed"""
 
         print("Vroom" * self.max_speed)
 
 
 class Bus(Vehicle):
     def fare(self, age: int) -> None:
-        """Tells the amount the fare is for the age inputted"""
+        """Prints the fare amount for the age inputted"""
         if 18 <= age <= 60:
             print("The fare of this bus is $5!")
         else:
-            print("You ride free!")
+            print("You ride for free! Nice!")
 
 
 a_vehicle = Vehicle()
 a_vehicle.name = "Tesla model S"
-a_vehicle.max_speed = 165
+a_vehicle.max_speed = 167
 a_vehicle.capacity = 4
 a_vehicle.vroom()
 
 a_bus = Bus()
 a_bus.name = "bus"
-a_bus.capacity = 35
-a_bus.max_speed = 125
+a_bus.capacity = 25
+a_bus.max_speed = 130
 a_bus.vroom()
-print()
+print("---")
 a_bus.fare(45)
+print("---")
 a_bus.fare(4)
+print("---")
 a_bus.fare(32)
+print("---")
 a_bus.fare(10)
