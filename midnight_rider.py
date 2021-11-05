@@ -13,6 +13,7 @@ MAX_FUEL = 50
 MAX_TOFU = 3
 MAX_HUNGER = 50
 MAX_DISTANCE = 100
+TOFU_REFILL_PERCENTAGE = .1
 
 ENDGAME_REASONS = {
     "LOSE_AGENTS": 1,
@@ -140,11 +141,22 @@ class Game:
             self.hunger += random.randrange(8, 18)
 
     def upkeep(self) -> None:
-        """Give the user reminders of hunger"""
+        """Give the user reminders of hunger
+
+        Process random events."""
         if self.hunger > 40:
             print(midnight_rider_text.SEVERE_HUNGER)
         elif self.hunger > 25:
             print(midnight_rider_text.HUNGER)
+
+        # A random percentage of time, the tofu bag
+        # is filled by the dog
+        if random.random() <= TOFU_REFILL_PERCENTAGE and self.amount_tofu < MAX_TOFU:
+            # refill the tofu
+            self.amount_tofu = MAX_TOFU
+            # display some text
+            print(midnight_rider_text.REFILL_TOFU)
+
 
         time.sleep(1)
 
